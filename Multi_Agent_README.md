@@ -9,8 +9,8 @@ with policy rules stored in a local SQLite database.
 
 ### 1. Download Example Script and Policy Dataset
 ```bash
-wget https://github.com/spritlesoftware/google-adk-get-started/blob/master/csv_to_policy_db.py
-wget https://github.com/spritlesoftware/google-adk-get-started/blob/master/policy_rules.csv
+wget https://raw.githubusercontent.com/spritlesoftware/google-adk-get-started/refs/heads/master/csv_to_policy_db.py
+wget https://raw.githubusercontent.com/spritlesoftware/google-adk-get-started/refs/heads/master/policy_rules.csv
 ````
 
 ---
