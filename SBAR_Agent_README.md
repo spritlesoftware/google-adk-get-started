@@ -8,10 +8,11 @@ The agent works with a local SQLite database populated from a CSV file.
 ## 📦 Installation
 
 ### 1. Install Required Python Package
-We need `pysqlite3-binary` for SQLite support:
+We need `pysqlite3-binary` for SQLite support and  `mcp-server-sqlite` for Sqlite MCQ:
 
 ```bash
 pip3 install pysqlite3-binary
+pip3 install mcp-server-sqlite 
 ````
 
 ---
