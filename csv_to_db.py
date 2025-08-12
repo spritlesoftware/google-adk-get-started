@@ -107,7 +107,7 @@ def query_database(db_file_path, table_name="patient_records"):
         print(f"Error querying database: {str(e)}")
 
 if __name__ == "__main__":
-    csv_file = "SBAR Notes - emergency_room_patients_week.csv"  
+    csv_file = "sbar_notes_emergency_room_patients_week.csv"  
     
     db_path = csv_to_sqlite(csv_file, table_name="medical_records")
     

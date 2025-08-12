@@ -22,7 +22,7 @@ root_agent = LlmAgent(
                     args=[
                         "mcp-server-sqlite",
                         "--db-path",
-                        "patient.db"
+                        "sbar_notes_emergency_room_patients_week.db"
                     ],
                 ),
             ),
