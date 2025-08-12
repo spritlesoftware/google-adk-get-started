@@ -1,0 +1,22 @@
+rule_id,category,signal,operator,value,unit,additional_condition,time_window_h,action,priority,message,dedupe_key
+R001,vitals,SpO2,<,92,%,,0,Notify physician; call respiratory,High,SpO₂ below 92%. Start O2 per protocol and escalate.,vitals_spo2_low
+R002,vitals,TempC,>=,38.3,C,,0,Notify physician,Medium,Fever ≥38.3°C detected; evaluate source of infection.,vitals_temp_high
+R003,vitals,BP_Systolic,<,90,mmHg,,0,Notify physician; fluid bolus per protocol,High,Systolic BP <90 mmHg suggests hypotension.,vitals_sbp_low
+R004,vitals,BP_Systolic,>,180,mmHg,,0,Notify physician,High,Severe hypertension (SBP >180 mmHg).,vitals_sbp_high
+R005,vitals,HR,>,120,bpm,,0,Notify physician,Medium,Tachycardia HR >120 bpm.,vitals_hr_high
+R006,vitals,RR,>,28,/min,,0,Notify physician; consider ABG,High,Tachypnea RR >28/min.,vitals_rr_high
+R007,vitals_combo,SpO2_and_RR,AND,SpO2<90 & RR>24,,,0,Notify physician; call respiratory,High,Hypoxemia with tachypnea.,vitals_combo_hypoxemia_tachypnea
+R010,urine,appearance,==,Bloody,,,0,Notify physician; consider urology consult,High,Gross hematuria observed.,urine_bloody
+R011,urine,appearance,==,Cloudy, AND TempC>=38.0,,0,Notify physician,Medium,Cloudy urine with fever may indicate UTI.,urine_cloudy_fever
+R012,stool,consistency,==,Watery,,,0,Start hydration protocol; notify physician if persists,Medium,Watery stools; risk of dehydration.,stool_watery
+R013,stool,no_bm_hours,>=,48,h,,48,Notify physician; consider bowel regimen,Low,No bowel movement for ≥48 hours.,stool_constipation
+R020,diet,plan,==,NPO,,,24,Notify physician if NPO ≥24h; consider nutrition consult,Low,Prolonged NPO >24h.,diet_npo_24h
+R030,condition_labs,Chest pain & Troponin,AND,condition='Chest pain' & labs contains 'Troponin',,,0,Notify cardiology; trend troponin,High,Chest pain with troponin testing initiated.,cp_troponin_presence
+R031,condition_labs,SOB & D-Dimer,AND,condition='Shortness of breath' & labs contains 'D-Dimer',,,0,Consider CTPA protocol; notify physician,Medium,SOB with D-Dimer ordered.,sob_ddimer_presence
+R032,condition_labs,Hypoxemia & ABG,AND,SpO2<92 & labs contains 'ABG',,,0,Call respiratory; monitor closely,High,Hypoxemia with ABG ordered.,hypoxemia_abg_presence
+R040,sepsis,Temp_or_HR_and_labs,AND,(TempC>=38.3 or HR>120) & labs contains 'CBC',,,0,Sepsis screen; notify physician,High,Possible sepsis indicators present.,sepsis_screen_presence
+R050,glycemia,Insulin_given,==,medications contains 'Insulin',,,0,Ensure BG monitoring q1-2h,Medium,Insulin administered; monitor glucose closely.,insulin_monitoring
+R051,glycemia,Hypoglycemia_condition,==,condition='Hypoglycemia',,,0,BG checks q15min until >100 mg/dL; notify physician,High,Hypoglycemia case; frequent monitoring.,hypoglycemia_protocol
+R060,respiratory,Nebulization_given,==,medications contains 'Salbutamol nebulization',,,0,Reassess SpO₂ and RR in 20 min,Low,Post-nebulization reassessment needed.,neb_reassess
+R070,aggregation,multiple_low_spo2,COUNT,SpO2<92 across ward,,,0,Add unit risk: high respiratory workload,Info,Multiple patients with low SpO₂.,agg_low_spo2
+R071,aggregation,multiple_diabetic_diet,COUNT,Diet='Diabetic diet' & Insulin used,,,0,Add unit risk: frequent BG checks,Info,High glycemic management workload.,agg_diabetes_load

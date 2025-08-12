@@ -13,8 +13,7 @@ def get_current_time(city: str) -> dict:
         dict: status and result or error msg.
     """
 
-    tz = ZoneInfo(city
-    )
+    tz = ZoneInfo(city)
     now = datetime.datetime.now(tz)
     report = (
         f'The current time in {city} is {now.strftime("%Y-%m-%d %H:%M:%S %Z%z")}'
