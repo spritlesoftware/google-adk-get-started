@@ -12,7 +12,8 @@ We need `pysqlite3-binary` for SQLite support and  `mcp-server-sqlite` for Sqlit
 
 ```bash
 pip3 install pysqlite3-binary
-pip3 install mcp-server-sqlite 
+pip3 install mcp-server-sqlite
+pip3 install pandas
 ````
 
 ---
