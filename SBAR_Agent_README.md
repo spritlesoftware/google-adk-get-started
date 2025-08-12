@@ -24,8 +24,8 @@ pip3 install mcp-server-sqlite
 Download the CSV-to-database script and the example patient dataset:
 
 ```bash
-wget https://github.com/spritlesoftware/google-adk-get-started/blob/master/csv_to_db.py
-wget https://github.com/spritlesoftware/google-adk-get-started/blob/master/sbar_notes_emergency_room_patients_week.csv
+wget https://raw.githubusercontent.com/spritlesoftware/google-adk-get-started/refs/heads/master/csv_to_db.py
+wget https://raw.githubusercontent.com/spritlesoftware/google-adk-get-started/refs/heads/master/sbar_notes_emergency_room_patients_week.csv
 ```
 
 ---
