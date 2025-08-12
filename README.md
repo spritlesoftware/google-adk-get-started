@@ -1,0 +1,15 @@
+mkdir google-adk-get-started
+
+First Agent
+
+mkdir multi_tool_agent/
+echo "from . import agent" > multi_tool_agent/__init__.py
+touch multi_tool_agent/agent.py
+touch multi_tool_agent/.env
+
+Copy and past this in .env
+
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=
+
+copy and paste the code https://github.com/spritlesoftware/google-adk-get-started/blob/master/multi_tool_agent/agent.py below into the agent.py
